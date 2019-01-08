@@ -39,9 +39,6 @@ deleteTodo: function(position){
 
      /* we need to create a variable so we can access these functions from the HTML? afterwards, can try creating these functions the usual way without creating an Object, and see if i can still trigger them from the HTML, without having to type handlers.displayTodos */
      var handlers = {
-         displayTodos: function(){
-        todoList.displayTodos()
-    },
     toggleAll: function(){
         todoList.toggleAll()
         view.displayTodos()
@@ -66,27 +63,28 @@ deleteTodo: function(position){
 var view = {displayTodos: function(){
     var grabUl = document.querySelector("ul");
  grabUl.innerHTML = "" /*Makes sure list is cleared before we add items*/
-
-for (var i = 0; i < todoList.todos.length; i++){
-    var todoLi = document.createElement("li"); 
-    var todo = todoList.todos[i];
+todoList.todos.forEach(function(todo, position){  
+    var todoLi = document.createElement("li")   
     var todoTextWithCompletion = "";
 
-if (todo.completed === true)
+    if (todo.completed === true)
     {todoTextWithCompletion = "(X) " + todo.todoText;
     }
 else {
     todoTextWithCompletion = "( ) " + todo.todoText;
     }
-todoLi.id = i; /*So I think this is a way of targetting only the relevant Li*/ /*we use id because todos is
-an array, and there will only be ONE item at each position, and I can represent any of them, as i is always changing. dynamic. */
-todoLi.textContent = todoTextWithCompletion; 
+
+    todoLi.id = position;
+    todoLi.textContent = todoTextWithCompletion; 
 todoLi.appendChild(this.createDeleteButton());
-grabUl.appendChild(todoLi)
-}
-}// textContent is a built-in property that can be changed. we are makig it equal to
+grabUl.appendChild(todoLi);
+}, this);
+},
+
+
+// textContent is a built-in property that can be changed. we are makig it equal to
 // whatever goes in the todoText argument
-,
+
  createDeleteButton: function() {
     var deleteButton = document.createElement('button'); /*creates a button*/
      deleteButton.textContent = "Delete";
@@ -114,8 +112,6 @@ grabUl.appendChild(todoLi)
 
 }
 view.setUpEventListeners(); /*we do this so the code runs automatically*/
-
-
 
 
 
