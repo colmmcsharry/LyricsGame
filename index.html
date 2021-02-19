@@ -1,29 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-<div class = "container">
-     <h1>My ToDo List</h1> <br>
-        <div>   
-         <button onclick = "handlers.toggleAll()">Toggle All</button> <br>
-   
-        </div><br>
-<div>
-    <button onclick = "handlers.addTodos()">Add</button> 
-    <input id = "addToDoTextInput" type = "text">
-</div>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<ul>
-    
-</ul>
-</div>
-<script type="text/javascript" src="javas.js"></script>   
-</body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css"> 
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div id = "intro">
+     <h1 class = "indexhead">Hello, gamer!</h1> <br>
+        <h2 class = "indexhead"> Welcome to the lyrics game</h2>
+        <br>
+        <h3 class = "blink_me" onclick='change()'> Click here for instructions</h3>
+    </div>
+<h1 id = "invis"> <ul> <li>Type in the missing lyric</li> 
+    <li>press Enter</li>
+<li>press Tab to skip to the next line</li></ul>
+<br><br> <a href="#view">Go to game!</a></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mb-4">
+      <div class="card h-100">
+        <a href="song1.html"><img class="card-img-top" src="adelepic.jpg" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title" id="view">
+            <a href="song1.html">Adele - Hello (Easy)</a>
+          </h4>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+      <div class="card h-100">
+        <a href="song2.html"><img class="card-img-top" src="cudipic.jpeg" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="song2.html">Kid Cudi - The Prayer (Hard)</a>
+          </h4>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</p>
+        </div>
+      </div>
+      <span id = "game"></span>
+    </div>
+   
+
+<script type='text/javascript' src="javas.js"></script> 
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
-    
